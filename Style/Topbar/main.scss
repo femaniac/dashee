@@ -33,45 +33,52 @@
       font-size: 40px;
     }
 
-    .button_controls {
+    .topbar_button_controls {
       display: flex;
       align-items: center;
+      position: relative;
 
       .search_input {
-        padding: 5px 10px;
-        width: 200px;
-        border-radius: 5px;
-        color: white;
+        padding: 8px 10px;
+        width: 250px;
+        color: #504190;
         transition: all 350ms ease-in-out;
-        /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px 0 0 16px;
+        background: white;
+        border-radius: 5px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         &:focus {
-          width: 500px;
+          width: 600px;
           outline: none;
 
         }
         &::placeholder {
-          color: #AFB6BE;
+          color: #504190;
         }
       }
 
       .search_button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
         color: white;
-        border-radius: 0 16px 16px 0;
-        padding: 8px 12px;
-        font-size: 12px;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 0 5px 5px 0;
         cursor: pointer;
-        /* From https://css.glass */
-        background: rgba(255, 255, 255, 0.2);
+        background: #705CC4;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 300ms linear;
+
+        &:active{
+          background: none;
+          box-shadow: none;
+        }
       }
     }
   }

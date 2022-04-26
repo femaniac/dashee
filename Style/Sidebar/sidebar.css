@@ -58,4 +58,16 @@
           backdrop-filter: blur(2.5px);
   border-left: 5px solid white;
 }
+
+.active_selected_content {
+  -webkit-box-shadow: 0 4px 30px rgba(247, 246, 246, 0.1);
+          box-shadow: 0 4px 30px rgba(247, 246, 246, 0.1);
+  -webkit-backdrop-filter: blur(2.5px);
+          backdrop-filter: blur(2.5px);
+  border-right: 5px solid white;
+}
+
+.active_selected_content ion-icon, .active_selected_content a {
+  font-weight: 600 !important;
+}
 /*# sourceMappingURL=sidebar.css.map */

@@ -46,3 +46,12 @@
     }
   }
 }
+
+.active_selected_content{
+  box-shadow: 0 4px 30px rgba(247, 246, 246, 0.1);
+  backdrop-filter: blur(2.5px);
+  border-right: 5px solid white;
+  ion-icon , a{
+    font-weight: 600 !important;
+  }
+}

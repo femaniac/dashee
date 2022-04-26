@@ -1,0 +1,72 @@
+.user_content_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .left_heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .button_controls {
+      display: flex;
+      list-style-type: none;
+      flex-direction: row;
+      margin-left: 20px;
+
+      .outline_btn {
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #705cc4;
+        margin-right: 20px;
+        transition: all 300ms ease-in-out;
+        box-shadow: #705cc4 0px 3px 8px;
+        &:active {
+          background: #705cc4;
+          box-shadow: none;
+        }
+      }
+
+      .create_user_btn {
+        cursor: pointer;
+        color: white;
+        background: #705cc4;
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: #705cc4 0px 3px 8px;
+        transition: all 300ms linear;
+        &:active {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .view_controls {
+    display: flex;
+    list-style-type: none;
+    margin-right: 20px;
+
+    li {
+      display: flex;
+      align-items: center;
+      color: white;
+      background: #705cc4;
+      font-weight: 600;
+      box-shadow: #705cc4 0px 3px 8px;
+      padding: 5px 20px;
+      transition: all 300ms linear;
+      border-radius: 5px;
+      margin-right: 10px;
+
+      &:active{
+        box-shadow: none;
+        background: white;
+        color: #705cc4;
+      }
+    }
+  }
+}
