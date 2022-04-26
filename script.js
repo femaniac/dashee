@@ -442,32 +442,57 @@ function overviewUser() {
 }
 
 // User Management --------------------------------------------
-function loadUsers() {
-  let tableContent = document.getElementById("tableContent");
-  tableContent.innerHTML = "";
+function AllUsers() {
 
+  let tableOfUsers = document.getElementById("tableOfUsers");
   let userGender = "";
-
+  
+  tableOfUsers.innerHTML = "";
   users.map((user) => {
     user.gender
       ? (userGender = "<td>Male</td>")
       : (userGender = "<td>Female</td>");
 
-    tableContent.innerHTML += `
+    tableOfUsers.innerHTML += `
         <tr>
             <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
             <td>${user.name}</td>
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #4DB145; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
-            <ion-icon style="font-size: 35px; color: red; cursor:pointer" onclick="deleteUser(${user.id})" name="close-circle-outline"></ion-icon>
+            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
             </td>
- 
+
         </tr>
         `;
   });
 }
+
+var tableOfUsers = document.getElementById("tableOfUsers");
+tableOfUsers.innerHTML = "";
+
+var userGender = "";
+
+users.map((user) => {
+  user.gender
+    ? (userGender = "<td>Male</td>")
+    : (userGender = "<td>Female</td>");
+
+  tableOfUsers.innerHTML += `
+  <tr>
+  <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
+  <td>${user.name}</td>
+  <td>${user.dateOfBirth}</td>
+  ${userGender}
+  <td>${user.role}</td>
+  <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+  <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
+  </td>
+
+</tr>
+  `;
+});
 
 function editUser(id) {
   const index = users.findIndex((u) => u.id == id);
@@ -590,8 +615,8 @@ function filterMale() {
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon style="font-size: 35px; color: #4DB145; cursor: pointer" onclick="editUser(${user.id})"  name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td><ion-icon style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})"  name="create-outline"></ion-icon></td>
+            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon></td>
 
         </tr>
         `;
@@ -618,8 +643,8 @@ function filterFemale() {
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #4DB145; cursor: pointer" name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon></td>
+            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon></td>
 
         </tr>
         `;
@@ -628,27 +653,29 @@ function filterFemale() {
 
 // Filter Role: Manager
 function filterManager() {
-  let tableContent = document.getElementById("tableContent");
-  tableContent.innerHTML = "";
+  let tableOfUsers = document.getElementById("tableOfUsers");
+  tableOfUsers.innerHTML = "";
+
 
   let userGender = "";
 
-  let managerFilter = users.filter((user) => user.role == "Manager");
+  let managerFilter = users.filter((user) => user.role === "Manager");
 
   managerFilter.map((user) => {
     user.gender
       ? (userGender = "<td>Male</td>")
       : (userGender = "<td>Female</td>");
 
-    tableContent.innerHTML += `
+    tableOfUsers.innerHTML += `
         <tr>
             <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
             <td>${user.name}</td>
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon style="font-size: 35px; color: #4DB145; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td><ion-icon style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            </td>
 
         </tr>
         `;
@@ -657,8 +684,8 @@ function filterManager() {
 
 // Filter Role: Admin
 function filterAdmin() {
-  let tableContent = document.getElementById("tableContent");
-  tableContent.innerHTML = "";
+  let tableOfUsers = document.getElementById("tableOfUsers");
+  tableOfUsers.innerHTML = "";
 
   let userGender = "";
 
@@ -669,15 +696,16 @@ function filterAdmin() {
       ? (userGender = "<td>Male</td>")
       : (userGender = "<td>Female</td>");
 
-    tableContent.innerHTML += `
+    tableOfUsers.innerHTML += `
         <tr>
             <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
             <td>${user.name}</td>
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #4DB145; cursor: pointer" name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
+            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            </td>
 
         </tr>
         `;
@@ -686,8 +714,8 @@ function filterAdmin() {
 
 // Filter Role: Register
 function filterRegister() {
-  let tableContent = document.getElementById("tableContent");
-  tableContent.innerHTML = "";
+  let tableOfUsers = document.getElementById("tableOfUsers");
+  tableOfUsers.innerHTML = "";
 
   let userGender = "";
 
@@ -698,15 +726,16 @@ function filterRegister() {
       ? (userGender = "<td>Male</td>")
       : (userGender = "<td>Female</td>");
 
-    tableContent.innerHTML += `
+    tableOfUsers.innerHTML += `
         <tr>
             <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
             <td>${user.name}</td>
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #4DB145; cursor: pointer" name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
+            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            </td>
 
         </tr>
         `;
@@ -715,8 +744,8 @@ function filterRegister() {
 
 // Sort Section ------------------------------------------------------------------------
 function sortDOB() {
-  let tableContent = document.getElementById("tableContent");
-  tableContent.innerHTML = "";
+  let tableOfUsers = document.getElementById("tableOfUsers");
+  tableOfUsers.innerHTML = "";
 
   let userGender = "";
   function compare(first, second) {
@@ -736,15 +765,17 @@ function sortDOB() {
       ? (userGender = "<td>Male</td>")
       : (userGender = "<td>Female</td>");
 
-    tableContent.innerHTML += `
+    tableOfUsers.innerHTML += `
         <tr>
             <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
             <td>${user.name}</td>
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #4DB145; cursor: pointer" name="create-outline"></ion-icon></td>
-            <td><ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: red; cursor:pointer" name="close-circle-outline"></ion-icon></td>
+            <td>
+              <ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
+              <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            </td>
 
         </tr>
         

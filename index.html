@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Top Bar / Header -->
   <div id="header" class="top_bar_wrapper">
 
     <div class="left_content_wrap">
@@ -56,6 +56,7 @@
     </div>
   </div>
 
+  <!-- Side Bar / Navigation -->
   <ul class="left_side_bar">
     <li>
       <ion-icon name="person-outline"></ion-icon><a href="./Pages/profile.html">Profile</a>
@@ -81,7 +82,7 @@
   </ul>
 
 
-  <!-- Body -->
+  <!-- Body / Content -->
   <section class="users_content_wrap">
     <div class="container-fluid">
 
@@ -89,22 +90,17 @@
       <div class="user_content_heading">
 
         <div class="left_heading">
-
-          <h2>Users List</h2>
-
+          <h2>Users</h2>
           <ul class="button_controls">
-            <li onclick="loadUsers()" class="outline_btn">Load Users</li>
             <li data-toggle="modal" data-target="#formModal" class="create_user_btn">+ Add New</li>
           </ul>
         </div>
 
-        <ul class="view_controls">
-          <li onclick="loadUsers()">
-            <ion-icon name="list-outline"></ion-icon>
-          </li>
-          <li>
-            <ion-icon name="grid-outline"></ion-icon>
-          </li>
+        <ul class="title_filter_controls">
+          <li id="all_title" onclick="AllUsers()">All</li>
+          <li id="admin_title" onclick="filterAdmin()">Admin</li>
+          <li id="manager_title" onclick="filterManager()">Manager</li>
+          <li id="register_title" onclick="filterRegister()">Register</li>
         </ul>
       </div>
 
@@ -124,7 +120,7 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody id="tableContent">
+        <tbody id="tableOfUsers">
 
         </tbody>
       </table>
