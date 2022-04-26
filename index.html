@@ -1,155 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-    <title> Dashboard | User Management</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Style/Topbar/main.css">
+  <link rel="stylesheet" href="./Style/Sidebar/sidebar.css">
+  <link rel="stylesheet" href="./Style/Content/user-content.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title> Dashee </title>
 </head>
+
 <body>
-    <!-- Header -->
-    <div class="container-fluid">
-        <div id="topHeader" class="header_area row"></div>
+  <!-- Header -->
+  <div id="header" class="top_bar_wrapper">
+
+    <div class="left_content_wrap">
+      <h3 class="main_logo">Dashee</h3>
+
+      <div class="button_controls">
+        <input type="text" class="search_input" name="search">
+        <div class="search_button">
+          <ion-icon name="search"></ion-icon>
+        </div>
+      </div>
+
     </div>
 
-
- <!-- Body -->
- <div class="row">
-    <!-- Left-side Menu --> 
-        <div id="side_bar" class="col-lg-2"></div>
-
-        <div class="col-lg-10">
-            <div class="container-fluid mt-5">
-                <div class="row">
-                    <div class="col">
-                        <button onclick="overviewUser()" type="button" name="" id="" class="btn btn-dark" btn-lg btn-block">Overview</button>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-lg-4">
-                        <div class="manager-section d-flex align-items-center justify-content-between">
-                            <h3><ion-icon name="people"></ion-icon> Manager</h3>
-                            <h4 id="managerContent" ></h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="admin-section d-flex align-items-center justify-content-between">
-                            <h3><ion-icon name="people"></ion-icon> Admin</h3>
-                            <h4 id="adminContent"></h4>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="register-section d-flex align-items-center justify-content-between">
-                            <h3><ion-icon name="people"></ion-icon>  Register</h3>
-                            <h4 id="registerContent"></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+    <div class="profile_controls">
+      <i class="notification_icon">
+        <ion-icon name="notifications"></ion-icon>
+      </i>
+      <div class="profile_user_wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+          alt="user_avatar" class="profile_user_avatar">
+        <div class="profile_user_info">
+          <p class="profile_user_name">Alicia Elsher</p>
+          <p class="profile_user_title">UI Designer</p>
         </div>
-</div>
-    
-
-<!-- The Login Modal -->
-<div class="modal" id="loginModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Log in Portal</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-            <form action="">
-                <div class="form-group">
-                  <label for="ID">ID Number:</label>
-                  <input type="text" class="form-control" placeholder="Enter ID Number" id="idNumber">
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-                </div>
-                <div class="form-group form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember me
-                  </label>
-                </div>
-              </form>       
-        </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-  
       </div>
     </div>
   </div>
 
-   <!-- The Register Modal -->
-   <div class="modal" id="formModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">User Registration</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-            <form action="/action_page.php">
-             
-                <div class="form-group">
-                  <label for="name">Full Name:</label>
-                  <input type="text" class="form-control" placeholder="Enter your name" id="name">
-                </div>
-                <div class="form-group">
-                    <label for="dob">Year of Birth:</label>
-                    <input type="text" class="form-control" placeholder="Enter your Year of birth" id="dob">
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender:</label>
+  <ul class="left_side_bar">
+    <li>
+      <ion-icon name="person-outline"></ion-icon><a href="./Pages/profile.html">Profile</a>
+    </li>
+    <li>
+      <ion-icon name="people-outline"></ion-icon><a href="./Pages/users.html">Users</a>
+    </li>
+    <li>
+      <ion-icon name="options-outline"></ion-icon><a href="#">Control Panel</a>
+    </li>
+    <li>
+      <ion-icon name="folder-outline"></ion-icon><a href="#">Projects</a>
+    </li>
+    <li>
+      <ion-icon name="reader-outline"></ion-icon><a href="#">Tasks</a>
+    </li>
+    <li>
+      <ion-icon name="timer-outline"></ion-icon><a href="#">Logs</a>
+    </li>
+    <li>
+      <ion-icon name="clipboard-outline"></ion-icon><a href="#">Reports</a>
+    </li>
+  </ul>
 
-                      <select id="genderValue" class="form-control" name="" id="">
-                        <option id="maleValue">Male</option>
-                        <option id="femaleValue">Female</option>
-                      </select>
-                  </div>
-            
-               
-              </form>
 
+  <!-- Body -->
+  <section class="users_content_wrap">
+    <div class="row">
+
+      <!-- User Profile Content -->
+      <div class="col-lg-10">
+        <div class="container-fluid mt-4">
+          <h2>Users List</h2>
+          <button onclick="loadUsers()" type="button" name="" id="" class="btn btn-outline-success" btn-lg
+            btn-block">Load
+            Users</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filterModal">
+            <ion-icon name="filter"></ion-icon> Filter
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+            <ion-icon name="add"></ion-icon> Create
+          </button>
+          <table class="table table-hover mt-2">
+            <thead class="thead-dark">
+              <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th style="cursor: pointer;" onclick="sortDOB()">
+                  <ion-icon name="funnel-outline"></ion-icon> Date of Birth
+                </th>
+                <th>Gender</th>
+                <th>Role</th>
+                <th>Registered Date</th>
+                <th>Edit</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody id="tableContent">
+
+            </tbody>
+          </table>
         </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button onclick="createUser()" type="submit" class="btn btn-success">Create</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-  
       </div>
     </div>
-</div>
+  </section>
+
+
+  <!-- The Login Modal -->
+  <div class="modal" id="loginModal"></div>
+
+  <!-- The Register Modal -->
+  <div class="modal" id="formModal"></div>
 
 
 
@@ -158,8 +127,9 @@
 
 
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
+  <script src="./Scripts/UI.js"></script>
 </body>
+
 </html>

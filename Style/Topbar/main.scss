@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  ---top-bar-bg-color: #504190;
+}
+
+.top_bar_wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: var(---top-bar-bg-color);
+
+  .left_content_wrap {
+    display: flex;
+    align-items: center;
+
+    .main_logo {
+      margin-right: 200px;
+      color: white;
+      letter-spacing: 1px;
+      font-size: 40px;
+    }
+
+    .button_controls {
+      display: flex;
+      align-items: center;
+
+      .search_input {
+        padding: 5px 10px;
+        width: 200px;
+        border-radius: 5px;
+        color: white;
+        transition: all 350ms ease-in-out;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px 0 0 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        &:focus {
+          width: 500px;
+          outline: none;
+
+        }
+        &::placeholder {
+          color: #AFB6BE;
+        }
+      }
+
+      .search_button {
+        color: white;
+        border-radius: 0 16px 16px 0;
+        padding: 8px 12px;
+        font-size: 12px;
+        cursor: pointer;
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  .profile_controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .notification_icon {
+      cursor: pointer;
+      color: white;
+      margin-right: 50px;
+      font-size: 20px;
+    }
+
+    .profile_user_wrapper {
+      display: flex;
+      flex-direction: row;
+      .profile_user_avatar {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 1px white solid;
+        padding: 5px;
+        margin-right: 20px;
+      }
+
+      .profile_user_info {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        margin-top: 10px;
+        line-height: 5px;
+
+        .profile_user_name {
+          font-weight: 600;
+        }
+
+        .profile_user_title {
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}
+
+.side-menu {
+  background-color: #31343e;
+  height: 100vh;
+  padding: 10px;
+
+  .menu_content {
+    list-style-type: none;
+    line-height: 30px;
+
+    li {
+      border-radius: 5px;
+      transition: all 300ms linear;
+      padding: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: snow;
+        &:hover a {
+          color: black;
+        }
+      }
+    }
+
+    li a {
+      color: white;
+      text-decoration: none;
+      transition: all 300ms linear;
+    }
+  }
+}
+
+

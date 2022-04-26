@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title>User Management</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="container-fluid">
+    <div id="topHeader" class="header_area row"></div>
+  </div>
+
+  <!-- Body -->
+  <div class="row">
+    <!-- Left-side Menu -->
+    <div id="side_bar" class="col-lg-2"></div>
+
+
+    <!-- User Profile Content -->
+    <div class="col-lg-10">
+      <div class="container-fluid mt-4">
+        <h2>Users List</h2>
+        <button onclick="loadUsers()" type="button" name="" id="" class="btn btn-outline-success" btn-lg btn-block">Load
+          Users</button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#filterModal">
+          <ion-icon name="filter"></ion-icon> Filter
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">
+          <ion-icon name="add"></ion-icon> Create
+        </button>
+        <table class="table table-hover mt-2">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th style="cursor: pointer;" onclick="sortDOB()">
+                <ion-icon name="funnel-outline"></ion-icon> Date of Birth
+              </th>
+              <th>Gender</th>
+              <th>Role</th>
+              <th>Registered Date</th>
+              <th>Edit</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="tableContent">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Filter Modal -->
+  <div class="modal fade" id="filterModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Filter Section</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                  Gender
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                  <p onclick="filterMale()" style="cursor: pointer;">Male</p>
+                  <p onclick="filterFemale()" style="cursor: pointer;">Female</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                  Role
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <p style="cursor: pointer;" onclick="filterManager()">Manager</p>
+                  <p style="cursor: pointer;" onclick="filterAdmin()">Admin</p>
+                  <p style="cursor: pointer;" onclick="filterRegister()">Register</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- The Register Modal -->
+  <div class="modal" id="formModal"></div>
+
+
+
+  <!-- The Edit Modal -->
+  <div class="modal" id="editModal">
+  </div>
+
+  <!-- The Login Modal -->
+  <div class="modal" id="loginModal"></div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

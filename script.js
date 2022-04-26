@@ -401,50 +401,10 @@ const users = [
     }
 ]
 
-const topHeader = document.getElementById('topHeader')
-topHeader.innerHTML = 
-`
-<div class="col-lg-2"><h3 class="text-center pt-3">Dashee</h3></div>
-<div class="col-lg-10">
-
-   
-    <ul class="row top_menu mt-1 ">
-        <li class="col-4">
-            <div class="input-group ">
-                <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-dark" type="button"><ion-icon name="search"></ion-icon></button>
-                    </div>
-                </div>
-        </li>
-        <li class="col-4">
-            <button type="button" name="" id="" class="btn btn-dark" btn-lg btn-block"><ion-icon name="settings"></ion-icon></button>
-        </li>
-        <li class="col-4">
-            <button type="button" name="" id="" class="btn btn-danger" btn-lg btn-block"><ion-icon name="notifications"></ion-icon> </button>
-            <button data-toggle="modal" data-target="#formModal" type="button" name="" id="" class="btn btn-primary" btn-lg btn-block">Sign Up</button>
-            <button data-toggle="modal" data-target="#loginModal"  type="button" name="" id="" class="btn btn-success" btn-lg btn-block">Log In</button>
-        </li>
-    </ul>
-</div>
-`
-
-const sideBar = document.getElementById('side_bar')
-sideBar.innerHTML = 
-`
-<nav class="side-menu">
-<ul class="menu_content">
-    <li><a href="index.html"> <ion-icon name="stats-chart"></ion-icon> Dashboard </a></li>
-    <li><a href="profile.html"> <ion-icon name="people"></ion-icon> User Profile</a></li>
-    <li><a href="management.html"> <ion-icon name="grid"></ion-icon> User Management</a></li>
-</ul>
-</nav>
-`
 
 
 // Total Overview
 function overviewUser(){
-
 
 var managerContent = document.getElementById('managerContent');
 var filterManager = users.filter(user => user.role == 'Manager')
