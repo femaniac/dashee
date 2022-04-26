@@ -27,9 +27,10 @@
     align-items: center;
 
     .main_logo {
-      margin-right: 200px;
+      text-decoration: none;
+      margin-right: 120px;
       color: white;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       font-size: 40px;
     }
 
@@ -69,7 +70,6 @@
         padding: 10px 20px;
         font-size: 15px;
         font-weight: 600;
-        border-radius: 0 5px 5px 0;
         cursor: pointer;
         background: #705CC4;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
