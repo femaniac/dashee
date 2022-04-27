@@ -576,7 +576,8 @@ function saveEditUser(id) {
   users[index] = user;
 
   console.log(users[index]);
-  loadUsers();
+
+  AllUsers();
 }
 
 function deleteUser(id) {
@@ -590,7 +591,7 @@ function deleteUser(id) {
   if (yes) {
     users.splice(index, 1);
   }
-  loadUsers();
+  AllUsers();
 }
 
 // Filter Section -------------------------------------------------------------------------
@@ -673,8 +674,8 @@ function filterManager() {
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
-            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
             </td>
 
         </tr>
@@ -703,8 +704,8 @@ function filterAdmin() {
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
-            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
             </td>
 
         </tr>
@@ -733,8 +734,8 @@ function filterRegister() {
             <td>${user.dateOfBirth}</td>
             ${userGender}
             <td>${user.role}</td>
-            <td><ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
-            <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
             </td>
 
         </tr>
@@ -773,8 +774,8 @@ function sortDOB() {
             ${userGender}
             <td>${user.role}</td>
             <td>
-              <ion-icon onclick="editUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor: pointer" name="create-outline"></ion-icon>
-              <ion-icon onclick="deleteUser(${user.id})" style="font-size: 35px; color: #705cc4; cursor:pointer" name="trash-outline"></ion-icon>
+              <ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+              <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
             </td>
 
         </tr>
@@ -802,7 +803,7 @@ function createUser() {
   };
 
   users.push(user);
-  loadUsers();
+  AllUsers();
 }
 
 const loginModal = document.getElementById("loginModal");
