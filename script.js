@@ -494,6 +494,21 @@ users.map((user) => {
   `;
 });
 
+let usersCount = document.getElementById('users_count')
+let adminsCount = document.getElementById('admins_count')
+let managersCount = document.getElementById('managers_count')
+let registersCount = document.getElementById('registers_count')
+
+usersCount.innerHTML = users.length;
+
+let admins = users.filter(user => user.role === "Admin");
+adminsCount.innerHTML = admins.length;
+let managers = users.filter(user => user.role === 'Manager')
+managersCount.innerHTML = managers.length;
+let registers = users.filter(user => user.role === 'Register');
+registersCount.innerHTML = registers.length;
+
+
 function editUser(id) {
   const index = users.findIndex((u) => u.id == id);
   const found = index !== -1;
