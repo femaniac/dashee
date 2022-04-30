@@ -28,20 +28,45 @@ body {
       list-style-type: none;
       flex-direction: row;
       margin-left: 20px;
+      align-items: center;
 
-      // .outline_btn {
-      //   cursor: pointer;
-      //   padding: 5px 10px;
-      //   border-radius: 5px;
-      //   color: #705cc4;
-      //   margin-right: 20px;
-      //   transition: all 300ms ease-in-out;
-      //   box-shadow: #705cc4 0px 3px 8px;
-      //   &:active {
-      //     background: #705cc4;
-      //     box-shadow: none;
-      //   }
-      // }
+      .user_search_bar{
+        margin-left: 20px;
+        position: relative;
+
+        input {
+          border: none;
+          width: 400px;
+          color: #705cc4;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          border-radius: 5px;
+          padding: 10px 15px;
+          transition: all 300ms linear;
+
+          &:focus{
+            outline: none;
+            box-shadow: #705cc4 0px 7px 29px 0px;
+
+          }
+
+        }
+
+        span{
+          cursor: pointer;
+          position: absolute;
+          background:#705cc4;
+          padding: 10px 15px;
+          color: white;
+          right: 0;
+          border-radius: 0 5px 5px 0;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          transition: all 300ms linear;
+
+          &:active{
+            background:#b8abeb;
+          }
+        }
+      }
 
       .create_user_btn {
         cursor: pointer;
@@ -69,7 +94,6 @@ body {
 
     .counter{
       background-color: #705cc4;
-      box-shadow: #705cc4 0px 3px 8px;
       color: white;
       border-radius: 50%;
       padding: 5px;
@@ -106,8 +130,6 @@ body {
         width: 100%;
       }
 
-
-    
     }
   }
 }

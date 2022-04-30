@@ -494,20 +494,26 @@ users.map((user) => {
   `;
 });
 
+function searchUser () {
+  let tableOfUsers = document.getElementById('tableOfUsers');
+  tableOfUsers.innerHTML = "";
+
+  let searchInput = document.getElementById('search_input_value').nodeValue
+
+}
+
 let usersCount = document.getElementById('users_count')
 let adminsCount = document.getElementById('admins_count')
 let managersCount = document.getElementById('managers_count')
 let registersCount = document.getElementById('registers_count')
 
 usersCount.innerHTML = users.length;
-
 let admins = users.filter(user => user.role === "Admin");
 adminsCount.innerHTML = admins.length;
 let managers = users.filter(user => user.role === 'Manager')
 managersCount.innerHTML = managers.length;
 let registers = users.filter(user => user.role === 'Register');
 registersCount.innerHTML = registers.length;
-
 
 function editUser(id) {
   const index = users.findIndex((u) => u.id == id);
@@ -803,12 +809,15 @@ function createUser() {
   let nameValue = document.getElementById("name").value;
   let dobValue = document.getElementById("dob").value;
 
+
+
   const e = document.getElementById("genderValue");
   // const genderValue = e.options[e.selectedIndex].text;
   const isMale = e.selectedIndex == 0;
 
   const maxId = Math.max(...users.map((u) => u.id));
   let user = {
+
     id: maxId + 1, // get max id, then + 1
     name: nameValue,
     avatar: "https://www.w3schools.com/bootstrap5/img_avatar2.png",
@@ -817,7 +826,7 @@ function createUser() {
     role: "Register",
   };
 
-  users.push(user);
+  users.unshift(user);
   AllUsers();
 }
 
@@ -903,7 +912,7 @@ formModal.innerHTML += `
   
         <!-- Modal footer -->
         <div class="modal-footer">
-            <button onclick="createUser()" type="submit" class="btn btn-success">Create</button>
+            <div onclick="createUser()" data-dismiss="modal" type="submit" class="btn btn-dark">Create</div>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
   
@@ -911,3 +920,37 @@ formModal.innerHTML += `
     </div>
 
 `;
+
+
+function onSearchHandler() {
+  let searchInput = document.getElementById('searchInput').value;
+  let searchOutput = document.getElementById('tableOfUsers');
+  searchOutput.innerHTML = "";
+
+  let filteredInput = users.filter(user => user.name.includes(searchInput));
+
+  filteredInput.map(user => {
+
+    user.gender
+    ? (userGender = "<td>Male</td>")
+    : (userGender = "<td>Female</td>");
+
+  searchOutput.innerHTML += `
+      <tr>
+          <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
+          <td>${user.name}</td>
+          <td>${user.dateOfBirth}</td>
+          ${userGender}
+          <td>${user.role}</td>
+          <td>
+            <ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
+          </td>
+
+      </tr>
+      
+      `;
+  })
+}
+
+

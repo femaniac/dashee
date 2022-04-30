@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Style/Topbar/main.css">
+  <link rel="stylesheet" href="./Style/Topbar/topbar.css">
   <link rel="stylesheet" href="./Style/Sidebar/sidebar.css">
-  <link rel="stylesheet" href="./Style/Content/user-content.css">
+  <link rel="stylesheet" href="./Style/Content/Users/user-content.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -33,9 +33,9 @@
 
       <div class="topbar_button_controls">
         <input type="text" class="search_input" name="search" placeholder="Search ...">
-        <div class="search_button">
+        <spa class="search_button">
           <ion-icon name="search"></ion-icon>
-        </div>
+        </spa>
       </div>
 
     </div>
@@ -93,14 +93,19 @@
           <h2>Users</h2>
           <ul class="button_controls">
             <li data-toggle="modal" data-target="#formModal" class="create_user_btn">+ Add New</li>
+            <li class="user_search_bar"> 
+              <input onkeydown="onSearchHandler()" type="text" id="searchInput" placeholder="Search users">
+            </li>
           </ul>
         </div>
 
         <ul class="title_filter_controls">
           <li id="all_title" onclick="AllUsers()">All <span class="counter" id="users_count"></span></li>
           <li id="admin_title" onclick="filterAdmin()">Admin <span class="counter" id="admins_count"></span></li>
-          <li id="manager_title" onclick="filterManager()">Manager <span class="counter" id="managers_count"></span></li>
-          <li id="register_title" onclick="filterRegister()">Register <span class="counter" id="registers_count"></span></li>
+          <li id="manager_title" onclick="filterManager()">Manager <span class="counter" id="managers_count"></span>
+          </li>
+          <li id="register_title" onclick="filterRegister()">Register <span class="counter" id="registers_count"></span>
+          </li>
         </ul>
       </div>
 
@@ -111,7 +116,7 @@
             <th>Full Name</th>
             <th style="cursor: pointer;" onclick="sortDOB()">
               <div class="thead_filter">
-                <ion-icon name="filter-outline"></ion-icon>                
+                <ion-icon name="filter-outline"></ion-icon>
                 <span>Date of Birth</span>
               </div>
             </th>
