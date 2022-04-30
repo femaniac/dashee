@@ -1,3 +1,4 @@
+// !JSON
 const users = [
   {
     id: 1,
@@ -401,34 +402,7 @@ const users = [
   },
 ];
 
-// User Management --------------------------------------------
-function AllUsers() {
-
-  let tableOfUsers = document.getElementById("tableOfUsers");
-  let userGender = "";
-  
-  tableOfUsers.innerHTML = "";
-  users.map((user) => {
-    user.gender
-      ? (userGender = "<td>Male</td>")
-      : (userGender = "<td>Female</td>");
-
-    tableOfUsers.innerHTML += `
-        <tr>
-            <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
-            <td>${user.name}</td>
-            <td>${user.dateOfBirth}</td>
-            ${userGender}
-            <td>${user.role}</td>
-            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
-            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
-            </td>
-
-        </tr>
-        `;
-  });
-}
-
+// !Table Content ------------------------------------------------------------------
 var tableOfUsers = document.getElementById("tableOfUsers");
 tableOfUsers.innerHTML = "";
 
@@ -440,14 +414,15 @@ users.map((user) => {
     : (userGender = "<td>Female</td>");
 
   tableOfUsers.innerHTML += `
-  <tr>
-  <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
-  <td>${user.name}</td>
-  <td>${user.dateOfBirth}</td>
-  ${userGender}
-  <td>${user.role}</td>
-  <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
-  <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
+<tr>
+    <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
+    <td>${user.name}</td>
+    <td>${user.dateOfBirth}</td>
+    ${userGender}
+    <td>${user.role}</td>
+    <td>
+      <ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+      <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
   </td>
 
 </tr>
@@ -466,6 +441,34 @@ let managers = users.filter(user => user.role === 'Manager')
 managersCount.innerHTML = managers.length;
 let registers = users.filter(user => user.role === 'Register');
 registersCount.innerHTML = registers.length;
+
+
+// ! User Management ----- Tools ---------------------------------------
+
+function createUser() {
+  let nameValue = document.getElementById("name").value;
+  let dobValue = document.getElementById("dob").value;
+
+
+
+  const e = document.getElementById("genderValue");
+  // const genderValue = e.options[e.selectedIndex].text;
+  const isMale = e.selectedIndex == 0;
+
+  const maxId = Math.max(...users.map((u) => u.id));
+  let user = {
+
+    id: maxId + 1, // get max id, then + 1
+    name: nameValue,
+    avatar: "https://www.w3schools.com/bootstrap5/img_avatar2.png",
+    dateOfBirth: dobValue,
+    gender: isMale,
+    role: "Register",
+  };
+
+  users.unshift(user);
+  AllUsers();
+}
 
 function editUser(id) {
   const index = users.findIndex((u) => u.id == id);
@@ -567,8 +570,37 @@ function deleteUser(id) {
   AllUsers();
 }
 
-// Filter Section -------------------------------------------------------------------------
-// Filter Male
+// ! Filter & Sort --------------------------------------------------------
+
+// * All Users
+function AllUsers() {
+
+  let tableOfUsers = document.getElementById("tableOfUsers");
+  let userGender = "";
+  
+  tableOfUsers.innerHTML = "";
+  users.map((user) => {
+    user.gender
+      ? (userGender = "<td>Male</td>")
+      : (userGender = "<td>Female</td>");
+
+    tableOfUsers.innerHTML += `
+        <tr>
+            <td><img class="user_avatar" src="${user.avatar}" alt="user_avatar"></td>
+            <td>${user.name}</td>
+            <td>${user.dateOfBirth}</td>
+            ${userGender}
+            <td>${user.role}</td>
+            <td><ion-icon data-toggle="modal" data-target="#editModal" style="font-size: 35px; color: #705cc4; cursor: pointer" onclick="editUser(${user.id})" name="create-outline"></ion-icon>
+            <ion-icon style="font-size: 35px; color: #705cc4; cursor:pointer" onclick="deleteUser(${user.id})" name="trash-outline"></ion-icon>
+            </td>
+
+        </tr>
+        `;
+  });
+}
+
+// * Filter Male
 function filterMale() {
   let tableContent = document.getElementById("tableContent");
   tableContent.innerHTML = "";
@@ -596,7 +628,8 @@ function filterMale() {
         `;
   });
 }
-// Filter Female
+
+// * Filter Female
 function filterFemale() {
   let tableContent = document.getElementById("tableContent");
   tableContent.innerHTML = "";
@@ -625,7 +658,7 @@ function filterFemale() {
   });
 }
 
-// Filter Role: Manager
+// * Filter Role: Manager
 function filterManager() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
@@ -656,7 +689,7 @@ function filterManager() {
   });
 }
 
-// Filter Role: Admin
+// * Filter Role: Admin
 function filterAdmin() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
@@ -686,7 +719,7 @@ function filterAdmin() {
   });
 }
 
-// Filter Role: Register
+// * Filter Role: Register
 function filterRegister() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
@@ -716,7 +749,7 @@ function filterRegister() {
   });
 }
 
-// Sort Section ------------------------------------------------------------------------
+// * Sort Section ------------------------------------------------------------------------
 function sortDOB() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
@@ -757,123 +790,10 @@ function sortDOB() {
   });
 }
 
-function createUser() {
-  let nameValue = document.getElementById("name").value;
-  let dobValue = document.getElementById("dob").value;
 
+// ! Others ----------------------------------------------------------------
 
-
-  const e = document.getElementById("genderValue");
-  // const genderValue = e.options[e.selectedIndex].text;
-  const isMale = e.selectedIndex == 0;
-
-  const maxId = Math.max(...users.map((u) => u.id));
-  let user = {
-
-    id: maxId + 1, // get max id, then + 1
-    name: nameValue,
-    avatar: "https://www.w3schools.com/bootstrap5/img_avatar2.png",
-    dateOfBirth: dobValue,
-    gender: isMale,
-    role: "Register",
-  };
-
-  users.unshift(user);
-  AllUsers();
-}
-
-const loginModal = document.getElementById("loginModal");
-
-loginModal.innerHTML += `
-<div class="modal-dialog">
-<div class="modal-content">
-
-  <!-- Modal Header -->
-  <div class="modal-header">
-    <h4 class="modal-title">Log in Portal</h4>
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-  </div>
-
-  <!-- Modal body -->
-  <div class="modal-body">
-      <form action="">
-          <div class="form-group">
-            <label for="ID">ID Number:</label>
-            <input type="text" class="form-control" placeholder="Enter ID Number" id="idNumber">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" id="pwd">
-          </div>
-          <div class="form-group form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Remember me
-            </label>
-          </div>
-        </form>       
-  </div>
-
-  <!-- Modal footer -->
-  <div class="modal-footer">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-  </div>
-
-</div>
-</div>
-
-`;
-
-const formModal = document.getElementById("formModal");
-
-formModal.innerHTML += `
-<div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">User Registration</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-            <form>
-             
-                <div class="form-group">
-                  <label for="name">Full Name:</label>
-                  <input type="text" class="form-control" placeholder="Enter your name" id="name">
-                </div>
-                <div class="form-group">
-                    <label for="dob">Year of Birth:</label>
-                    <input type="text" class="form-control" placeholder="Enter your Year of birth" id="dob">
-                </div>
-                <div class="form-group">
-                    <label for="gender">Gender:</label>
-
-                      <select id="genderValue" class="form-control" name="" id="">
-                        <option id="maleValue">Male</option>
-                        <option id="femaleValue">Female</option>
-                      </select>
-                  </div>
-            
-               
-              </form>
-
-        </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <div onclick="createUser()" data-dismiss="modal" type="submit" class="btn btn-dark">Create</div>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-  
-      </div>
-    </div>
-
-`;
-
-
+// * Search Bar
 function onSearchHandler() {
   let searchInput = document.getElementById('searchInput').value;
   let searchOutput = document.getElementById('tableOfUsers');
@@ -904,5 +824,10 @@ function onSearchHandler() {
       `;
   })
 }
+
+//* adding active-class to selected element
+
+
+
 
 
