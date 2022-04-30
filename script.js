@@ -402,44 +402,44 @@ const users = [
 ];
 
 // Total Overview
-function overviewUser() {
-  var managerContent = document.getElementById("managerContent");
-  var filterManager = users.filter((user) => user.role == "Manager");
-  var countManager = 0;
-  for (var i = 0; i < filterManager.length; i++) {
-    countManager++;
-  }
+// function overviewUser() {
+//   var managerContent = document.getElementById("managerContent");
+//   var filterManager = users.filter((user) => user.role == "Manager");
+//   var countManager = 0;
+//   for (var i = 0; i < filterManager.length; i++) {
+//     countManager++;
+//   }
 
-  managerContent.innerHTML = `
- <span> Total Number: ${countManager} </span>
+//   managerContent.innerHTML = `
+//  <span> Total Number: ${countManager} </span>
  
-`;
+// `;
 
-  // Total Admins
-  var adminContent = document.getElementById("adminContent");
-  var filterAdmin = users.filter((user) => user.role == "Admin");
-  var countAdmin = 0;
-  for (let i = 0; i < filterAdmin.length; i++) {
-    countAdmin++;
-  }
+//   // Total Admins
+//   var adminContent = document.getElementById("adminContent");
+//   var filterAdmin = users.filter((user) => user.role == "Admin");
+//   var countAdmin = 0;
+//   for (let i = 0; i < filterAdmin.length; i++) {
+//     countAdmin++;
+//   }
 
-  adminContent.innerHTML = `
-<span> Total Number: ${countAdmin} </span>
-`;
+//   adminContent.innerHTML = `
+// <span> Total Number: ${countAdmin} </span>
+// `;
 
-  // Total Registers
-  var registerContent = document.getElementById("registerContent");
-  var filterRegister = users.filter((user) => user.role == "Register");
-  var countRegister = 0;
-  for (let i = 0; i < filterRegister.length; i++) {
-    countRegister++;
-  }
+//   // Total Registers
+//   var registerContent = document.getElementById("registerContent");
+//   var filterRegister = users.filter((user) => user.role == "Register");
+//   var countRegister = 0;
+//   for (let i = 0; i < filterRegister.length; i++) {
+//     countRegister++;
+//   }
 
-  registerContent.innerHTML = `
-<span> Total Number: ${countRegister} </span>
+//   registerContent.innerHTML = `
+// <span> Total Number: ${countRegister} </span>
 
-`;
-}
+// `;
+// }
 
 // User Management --------------------------------------------
 function AllUsers() {
