@@ -401,8 +401,6 @@ const users = [
   },
 ];
 
-
-
 // User Management --------------------------------------------
 function AllUsers() {
 
@@ -455,14 +453,6 @@ users.map((user) => {
 </tr>
   `;
 });
-
-function searchUser () {
-  let tableOfUsers = document.getElementById('tableOfUsers');
-  tableOfUsers.innerHTML = "";
-
-  let searchInput = document.getElementById('search_input_value').nodeValue
-
-}
 
 let usersCount = document.getElementById('users_count')
 let adminsCount = document.getElementById('admins_count')
