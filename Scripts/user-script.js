@@ -448,9 +448,6 @@ registersCount.innerHTML = registers.length;
 function createUserHandler() {
   let nameValue = document.getElementById("name").value;
   let dobValue = document.getElementById("dob").value;
-
-
-
   const e = document.getElementById("genderValue");
   // const genderValue = e.options[e.selectedIndex].text;
   const isMale = e.selectedIndex == 0;
@@ -467,7 +464,7 @@ function createUserHandler() {
   };
 
   users.unshift(user);
-  AllUsers();
+  AllUsersHandler();
 }
 
 function editUser(id) {
@@ -540,7 +537,6 @@ function saveEditUser(id) {
   console.log(nameValue);
   console.log(dobValue);
   const e = document.getElementById("genderValue");
-  // const genderValue = e.options[e.selectedIndex].text;
   const isMale = e.selectedIndex == 0;
 
   console.log(users[index]);
@@ -551,7 +547,7 @@ function saveEditUser(id) {
 
   users[index] = user;
 
-  AllUsers();
+  AllUsersHandler();
 }
 
 function deleteUser(id) {
@@ -565,7 +561,7 @@ function deleteUser(id) {
   if (yes) {
     users.splice(index, 1);
   }
-  AllUsers();
+  AllUsersHandler();
 }
 
 // ! Filter & Sort --------------------------------------------------------
@@ -821,20 +817,11 @@ function onSearchHandler() {
       
       `;
   })
+
+  
 }
 
-//* adding active-class to selected element
 
-document.querySelectorAll('.title_btn').forEach(item => {
-  item.addEventListener('click', () => {
-   
-    document.querySelectorAll('.title_btn').forEach(e => {
-      e.classList.remove('active_title')
-    })
-    item.classList.add('active_title')
-
-  })
-})
 
 
 

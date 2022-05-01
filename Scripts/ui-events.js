@@ -9,6 +9,19 @@ navItems.forEach(item => {
     })
 })
 
+//* adding active-class to selected element
+
+document.querySelectorAll('.title_btn').forEach(item => {
+    item.addEventListener('click', () => {
+     
+      document.querySelectorAll('.title_btn').forEach(e => {
+        e.classList.remove('active_title')
+      })
+      item.classList.add('active_title')
+  
+    })
+  })
+
 
 var notification = document.getElementById('notification');
 var dropdown = document.getElementById('dropdown_menu')
