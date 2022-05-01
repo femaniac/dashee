@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id":1,
+      "name":"Malia Haville",
+      "avatar":"https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=862&q=80",
+      "dateOfBirth":1999,
+      "gender":true,
+      "role":"Manager"
+    },
+    {
+      "id":2,
+      "name":"Franciska Lambkin",
+      "avatar":"https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+      "dateOfBirth":2015,
+      "gender":true,
+      "role":"Admin"
+    },
+    {
+      "id":3,
+      "name":"Reid Stellino",
+      "avatar":"https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+      "dateOfBirth":1999,
+      "gender":true,
+      "role":"Register"
+    },
+    {
+      "id":4,
+      "name":"Jeddy Tows",
+      "avatar":"https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":2000,
+      "gender":true,
+      "role":"Admin"
+    },
+    {
+      "id":5,
+      "name":"Julina Mithon",
+      "avatar":"https://images.unsplash.com/photo-1526510747491-58f928ec870f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":2006,
+      "gender":false,
+      "role":"Register"
+    },
+    {
+      "id":6,
+      "name":"Kaylil Sola",
+      "avatar":"https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":1996,
+      "gender":false,
+      "role":"Manager"
+    },
+    {
+      "id":7,
+      "name":"Padget Chant",
+      "avatar":"https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":2015,
+      "gender":true,
+      "role":"Register"
+    },
+    {
+      "id":8,
+      "name":"Persis Laurenson",
+      "avatar":"https://images.unsplash.com/photo-1596075780750-81249df16d19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":2015,
+      "gender":true,
+      "role":"Admin"
+    },
+    {
+      "id":9,
+      "name":"Louisette Le Merchant",
+      "avatar":"https://images.unsplash.com/photo-1542327897-d73f4005b533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "dateOfBirth":2006,
+      "gender":true,
+      "role":"Admin"
+    },
+    {
+      "id":10,
+      "name":"Vida Venton",
+      "avatar":"https://images.unsplash.com/photo-1632765854612-9b02b6ec2b15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+      "dateOfBirth":2000,
+      "gender":true,
+      "role":"Register"
+    }
+  ]
+}

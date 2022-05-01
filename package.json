@@ -1,0 +1,23 @@
+{
+  "name": "dashee",
+  "version": "1.0.0",
+  "description": "Dashee is an employee management which allows user to view and modify employees'info.",
+  "main": "index.js",
+  "scripts": {
+    "mock": "json-server --watch mock/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/femaniac/dashee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/femaniac/dashee/issues"
+  },
+  "homepage": "https://github.com/femaniac/dashee#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
