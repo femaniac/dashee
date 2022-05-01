@@ -1,158 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/Topbar/topbar.css" />
+        <link rel="stylesheet" href="./styles/Sidebar/sidebar.css" />
+        <link rel="stylesheet" href="./styles/Content/Users/user-content.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <title>Dashee</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Style/Topbar/topbar.css">
-  <link rel="stylesheet" href="./Style/Sidebar/sidebar.css">
-  <link rel="stylesheet" href="./Style/Content/Users/user-content.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <title> Dashee </title>
-</head>
+    <body>
+        <!-- Top Bar / Header -->
+        <div id="header" class="top_bar_wrapper">
+            <div class="left_content_wrap">
+                <a href="index.html" class="main_logo">Dashee</a>
 
-<body>
-  <!-- Top Bar / Header -->
-  <div id="header" class="top_bar_wrapper">
+                <div class="topbar_button_controls">
+                    <input
+                        type="text"
+                        class="search_input"
+                        name="search"
+                        placeholder="Search ..."
+                    />
+                    <span class="search_button">
+                        <ion-icon name="search"></ion-icon>
+                    </span>
+                </div>
+            </div>
 
-    <div class="left_content_wrap">
-      <a href="index.html" class="main_logo">Dashee</a>
-
-      <div class="topbar_button_controls">
-        <input type="text" class="search_input" name="search" placeholder="Search ...">
-        <spa class="search_button">
-          <ion-icon name="search"></ion-icon>
-        </spa>
-      </div>
-
-    </div>
-
-    <div class="profile_controls">
-      <i class="notification_icon">
-        <ion-icon name="notifications"></ion-icon>
-      </i>
-      <div class="profile_user_wrapper">
-        <img
-          src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-          alt="user_avatar" class="profile_user_avatar">
-        <div class="profile_user_info">
-          <p class="profile_user_name">Alicia Elsher</p>
-          <p class="profile_user_title">UI Designer</p>
+            <div class="profile_controls">
+                <i class="notification_icon">
+                    <ion-icon name="notifications"></ion-icon>
+                </i>
+                <div class="profile_user_wrapper">
+                    <img
+                        src="https://images.unsplash.com/photo-1484186139897-d5fc6b908812?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                        alt="user_avatar"
+                        class="profile_user_avatar"
+                    />
+                    <div class="profile_user_info">
+                        <p class="profile_user_name">Alicia Elsher</p>
+                        <p class="profile_user_title">UI Designer</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Side Bar / Navigation -->
-  <ul class="left_side_bar">
-    <li>
-      <ion-icon name="person-outline"></ion-icon><a href="./Pages/profile.html">Profile</a>
-    </li>
-    <li class="active_selected_content">
-      <ion-icon name="people-outline"></ion-icon><a href="./Pages/users.html">Users</a>
-    </li>
-    <li>
-      <ion-icon name="options-outline"></ion-icon><a href="#">Control Panel</a>
-    </li>
-    <li>
-      <ion-icon name="folder-outline"></ion-icon><a href="#">Projects</a>
-    </li>
-    <li>
-      <ion-icon name="reader-outline"></ion-icon><a href="#">Tasks</a>
-    </li>
-    <li>
-      <ion-icon name="timer-outline"></ion-icon><a href="#">Logs</a>
-    </li>
-    <li>
-      <ion-icon name="clipboard-outline"></ion-icon><a href="#">Reports</a>
-    </li>
-  </ul>
-
-
-  <!-- Body / Content -->
-  <section class="users_content_wrap">
-    <div class="container-fluid">
-
-      <!-- User Profile Content -->
-      <div class="user_content_heading">
-
-        <div class="left_heading">
-          <h2>Users</h2>
-          <ul class="button_controls">
-            <li data-toggle="modal" data-target="#formModal" class="create_user_btn">+ Add New</li>
-            <li class="user_search_bar"> 
-              <input onkeydown="onSearchHandler()" type="text" id="searchInput" placeholder="Search users">
+        <!-- Side Bar / Navigation -->
+        <ul class="left_side_bar">
+            <li>
+                <ion-icon name="person-outline"></ion-icon
+                ><a href="./pages/profile.html">Profile</a>
             </li>
-          </ul>
-        </div>
-
-        <ul class="title_filter_controls">
-          <li id="all_title" class="title_btn" onclick="AllUsers()">All <span class="counter" id="users_count"></span></li>
-          <li id="admin_title" class="title_btn" onclick="filterAdmin()">Admin <span class="counter" id="admins_count"></span></li>
-          <li id="manager_title" class="title_btn" onclick="filterManager()">Manager <span class="counter" id="managers_count"></span>
-          </li>
-          <li id="register_title" class="title_btn" onclick="filterRegister()">Register <span class="counter" id="registers_count"></span>
-          </li>
+            <li class="active_selected_content">
+                <ion-icon name="people-outline"></ion-icon
+                ><a href="./pages/users.html">Users</a>
+            </li>
+            <li>
+                <ion-icon name="options-outline"></ion-icon
+                ><a href="#">Control Panel</a>
+            </li>
+            <li>
+                <ion-icon name="folder-outline"></ion-icon
+                ><a href="#">Projects</a>
+            </li>
+            <li>
+                <ion-icon name="reader-outline"></ion-icon><a href="#">Tasks</a>
+            </li>
+            <li>
+                <ion-icon name="timer-outline"></ion-icon><a href="#">Logs</a>
+            </li>
+            <li>
+                <ion-icon name="clipboard-outline"></ion-icon
+                ><a href="#">Reports</a>
+            </li>
         </ul>
-      </div>
 
-      <table class="table table-bordered table-hover mt-2">
-        <thead class="table_content">
-          <tr >
-            <th>Avatar</th>
-            <th>Full Name</th>
-            <th style="cursor: pointer;" onclick="sortDOB()">
-              <div class="thead_filter">
-                <ion-icon name="filter-outline"></ion-icon>
-                <span>Date of Birth</span>
-              </div>
-            </th>
-            <th>Gender</th>
-            <th>Role</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="tableOfUsers">
+        <!-- Body / Content -->
+        <section class="users_content_wrap">
+            <div class="container-fluid">
+                <!-- User Profile Content -->
+                <div class="user_content_heading">
+                    <div class="left_heading">
+                        <h2>Users</h2>
+                        <ul class="button_controls">
+                            <li
+                                data-toggle="modal"
+                                data-target="#formModal"
+                                class="create_user_btn"
+                            >
+                                + Add New
+                            </li>
+                            <li class="user_search_bar">
+                                <input
+                                    onkeydown="onSearchHandler()"
+                                    type="text"
+                                    id="searchInput"
+                                    placeholder="Search users"
+                                />
+                            </li>
+                        </ul>
+                    </div>
 
-        </tbody>
-      </table>
+                    <ul class="title_filter_controls">
+                        <li
+                            id="all_title"
+                            class="title_btn"
+                            onclick="AllUsers()"
+                        >
+                            All <span class="counter" id="users_count"></span>
+                        </li>
+                        <li
+                            id="admin_title"
+                            class="title_btn"
+                            onclick="filterAdmin()"
+                        >
+                            Admin
+                            <span class="counter" id="admins_count"></span>
+                        </li>
+                        <li
+                            id="manager_title"
+                            class="title_btn"
+                            onclick="filterManager()"
+                        >
+                            Manager
+                            <span class="counter" id="managers_count"></span>
+                        </li>
+                        <li
+                            id="register_title"
+                            class="title_btn"
+                            onclick="filterRegister()"
+                        >
+                            Register
+                            <span class="counter" id="registers_count"></span>
+                        </li>
+                    </ul>
+                </div>
 
-    </div>
-  </section>
+                <table class="table table-bordered table-hover mt-2">
+                    <thead class="table_content">
+                        <tr>
+                            <th>Avatar</th>
+                            <th>Full Name</th>
+                            <th style="cursor: pointer" onclick="sortDOB()">
+                                <div class="thead_filter">
+                                    <ion-icon name="filter-outline"></ion-icon>
+                                    <span>Date of Birth</span>
+                                </div>
+                            </th>
+                            <th>Gender</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableOfUsers"></tbody>
+                </table>
+            </div>
+        </section>
 
+        <!-- The Login Modal -->
+        <div class="modal fade" id="loginModal"></div>
 
-  <!-- The Login Modal -->
-  <div class="modal fade" id="loginModal"></div>
+        <!-- The Register Modal -->
+        <div class="modal fade" id="formModal"></div>
 
-  <!-- The Register Modal -->
-  <div class="modal fade" id="formModal">
-  </div>
+        <!-- The Edit Modal -->
+        <div class="modal fade" id="editModal"></div>
 
-  <!-- The Edit Modal -->
-  <div class="modal fade" id="editModal">
-  </div>
-
-
-
-
-
-
-
-<script src="./Scripts/Modal.js"></script>
-  <script src="./Scripts/user-script.js"></script>
-</body>
-
+        <script src="./scripts/modal.js"></script>
+        <script src="./scripts/user-script.js"></script>
+    </body>
 </html>
