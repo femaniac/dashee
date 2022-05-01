@@ -131,6 +131,11 @@ body {
       }
 
     }
+
+    .active_title{
+      color: #705cc4 !important;
+      font-weight: 500 !important;
+    }
   }
 }
 
@@ -159,9 +164,4 @@ body {
     object-fit: cover;
     border-radius: 10px;
   }
-}
-
-.active_title{
-  color: #705cc4 !important;
-  font-weight: 500 !important;
 }

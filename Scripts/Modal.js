@@ -80,7 +80,7 @@ formModal.innerHTML += `
   
         <!-- Modal footer -->
         <div class="modal-footer">
-            <div onclick="createUser()" data-dismiss="modal" type="submit" class="btn btn-dark">Create</div>
+            <div onclick="createUserHandler()" data-dismiss="modal" type="submit" class="btn btn-dark">Create</div>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
   

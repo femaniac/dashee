@@ -58,26 +58,32 @@
 
   <!-- Side Bar / Navigation -->
   <ul class="left_side_bar">
-    <li>
+    <li class="nav-item">
       <ion-icon name="person-outline"></ion-icon><a href="./Pages/profile.html">Profile</a>
     </li>
-    <li class="active_selected_content">
-      <ion-icon name="people-outline"></ion-icon><a href="./Pages/users.html">Users</a>
+    <li class="nav-item active_selected_content">
+      <ion-icon name="people-outline"></ion-icon>
+      <a href="/">Users</a>
     </li>
-    <li>
-      <ion-icon name="options-outline"></ion-icon><a href="#">Control Panel</a>
+    <li class="nav-item">
+      <ion-icon name="options-outline"></ion-icon>
+      <a href="#">Control Panel</a>
     </li>
-    <li>
-      <ion-icon name="folder-outline"></ion-icon><a href="#">Projects</a>
+    <li class="nav-item">
+      <ion-icon name="folder-outline"></ion-icon>
+      <a href="#">Projects</a>
     </li>
-    <li>
-      <ion-icon name="reader-outline"></ion-icon><a href="#">Tasks</a>
+    <li class="nav-item">
+      <ion-icon name="reader-outline"></ion-icon>
+      <a href="#">Tasks</a>
     </li>
-    <li>
-      <ion-icon name="timer-outline"></ion-icon><a href="#">Logs</a>
+    <li class="nav-item">
+      <ion-icon name="timer-outline"></ion-icon>
+      <a href="#">Logs</a>
     </li>
-    <li>
-      <ion-icon name="clipboard-outline"></ion-icon><a href="#">Reports</a>
+    <li class="nav-item">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <a href="#">Reports</a>
     </li>
   </ul>
 
@@ -93,25 +99,29 @@
           <h2>Users</h2>
           <ul class="button_controls">
             <li data-toggle="modal" data-target="#formModal" class="create_user_btn">+ Add New</li>
-            <li class="user_search_bar"> 
+            <li class="user_search_bar">
               <input onkeydown="onSearchHandler()" type="text" id="searchInput" placeholder="Search users">
             </li>
           </ul>
         </div>
 
         <ul class="title_filter_controls">
-          <li id="all_title" class="title_btn" onclick="AllUsers()">All <span class="counter" id="users_count"></span></li>
-          <li id="admin_title" class="title_btn" onclick="filterAdmin()">Admin <span class="counter" id="admins_count"></span></li>
-          <li id="manager_title" class="title_btn" onclick="filterManager()">Manager <span class="counter" id="managers_count"></span>
+          <li id="all_title" class="active_title title_btn" onclick="AllUsersHandler()">All <span class="counter"
+              id="users_count"></span></li>
+          <li id="admin_title" class="title_btn" onclick="filterAdminHandler()">Admin <span class="counter"
+              id="admins_count"></span></li>
+          <li id="manager_title" class="title_btn" onclick="filterManagerHandler()">Manager <span class="counter"
+              id="managers_count"></span>
           </li>
-          <li id="register_title" class="title_btn" onclick="filterRegister()">Register <span class="counter" id="registers_count"></span>
+          <li id="register_title" class="title_btn" onclick="filterRegisterHandler()">Register <span class="counter"
+              id="registers_count"></span>
           </li>
         </ul>
       </div>
 
       <table class="table table-bordered table-hover mt-2">
         <thead class="table_content">
-          <tr >
+          <tr>
             <th>Avatar</th>
             <th>Full Name</th>
             <th style="cursor: pointer;" onclick="sortDOB()">
@@ -151,7 +161,8 @@
 
 
 
-<script src="./Scripts/Modal.js"></script>
+  <script src="./Scripts/Modal.js"></script>
+  <script src="./Scripts/ui-events.js"></script>
   <script src="./Scripts/user-script.js"></script>
 </body>
 

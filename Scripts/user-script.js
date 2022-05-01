@@ -445,7 +445,7 @@ registersCount.innerHTML = registers.length;
 
 // ! User Management ----- Tools ---------------------------------------
 
-function createUser() {
+function createUserHandler() {
   let nameValue = document.getElementById("name").value;
   let dobValue = document.getElementById("dob").value;
 
@@ -551,8 +551,6 @@ function saveEditUser(id) {
 
   users[index] = user;
 
-  console.log(users[index]);
-
   AllUsers();
 }
 
@@ -573,7 +571,7 @@ function deleteUser(id) {
 // ! Filter & Sort --------------------------------------------------------
 
 // * All Users
-function AllUsers() {
+function AllUsersHandler() {
 
   let tableOfUsers = document.getElementById("tableOfUsers");
   let userGender = "";
@@ -601,7 +599,7 @@ function AllUsers() {
 }
 
 // * Filter Male
-function filterMale() {
+function filterMaleHandler() {
   let tableContent = document.getElementById("tableContent");
   tableContent.innerHTML = "";
 
@@ -630,7 +628,7 @@ function filterMale() {
 }
 
 // * Filter Female
-function filterFemale() {
+function filterFemaleHandler() {
   let tableContent = document.getElementById("tableContent");
   tableContent.innerHTML = "";
 
@@ -659,7 +657,7 @@ function filterFemale() {
 }
 
 // * Filter Role: Manager
-function filterManager() {
+function filterManagerHandler() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
 
@@ -690,7 +688,7 @@ function filterManager() {
 }
 
 // * Filter Role: Admin
-function filterAdmin() {
+function filterAdminHandler() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
 
@@ -720,7 +718,7 @@ function filterAdmin() {
 }
 
 // * Filter Role: Register
-function filterRegister() {
+function filterRegisterHandler() {
   let tableOfUsers = document.getElementById("tableOfUsers");
   tableOfUsers.innerHTML = "";
 
@@ -827,7 +825,16 @@ function onSearchHandler() {
 
 //* adding active-class to selected element
 
+document.querySelectorAll('.title_btn').forEach(item => {
+  item.addEventListener('click', () => {
+   
+    document.querySelectorAll('.title_btn').forEach(e => {
+      e.classList.remove('active_title')
+    })
+    item.classList.add('active_title')
 
+  })
+})
 
 
 

@@ -170,6 +170,11 @@ body {
   width: 100%;
 }
 
+.user_content_heading .title_filter_controls .active_title {
+  color: #705cc4 !important;
+  font-weight: 500 !important;
+}
+
 .table {
   background: white !important;
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -201,10 +206,5 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
-}
-
-.active_title {
-  color: #705cc4 !important;
-  font-weight: 500 !important;
 }
 /*# sourceMappingURL=user-content.css.map */
