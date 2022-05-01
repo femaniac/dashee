@@ -8,3 +8,18 @@ navItems.forEach(item => {
         item.classList.add('active_selected_content')
     })
 })
+
+
+var notification = document.getElementById('notification');
+var dropdown = document.getElementById('dropdown_menu')
+dropdown.style.display = 'none'
+
+notification.addEventListener('click' , () => {
+    if(dropdown.style.display === 'none'){
+        dropdown.style.display = 'block'
+    }else{
+        dropdown.style.display = 'none'
+    }
+})
+
+

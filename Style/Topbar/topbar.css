@@ -139,10 +139,28 @@
 }
 
 .top_bar_wrapper .profile_controls .notification_icon {
+  position: relative;
   cursor: pointer;
   color: white;
   margin-right: 50px;
   font-size: 20px;
+}
+
+.top_bar_wrapper .profile_controls .notification_icon .notification_dropdown {
+  position: absolute;
+  right: 0;
+  width: 500px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  list-style-type: none;
+  z-index: 999;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.top_bar_wrapper .profile_controls .notification_icon .notification_dropdown li {
+  color: black;
 }
 
 .top_bar_wrapper .profile_controls .profile_user_wrapper {
